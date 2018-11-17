@@ -58,7 +58,7 @@ module DPL
         if @options[:app]
           context.shell "git remote add #{@remote} git@scalingo.com:#{@options[:app]}.git 2> /dev/null > /dev/null"
         end
-        unless context.shell "git push #{@remote} #{@branch} -f"
+        unless context.shell "git push #{@remote} staging:master"
           error "Couldn't push your app."
         end
       end
